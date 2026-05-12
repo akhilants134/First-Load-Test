@@ -1,0 +1,14 @@
+config:
+  target: "http://localhost:3001"
+  phases:
+    - duration: 10
+      arrivalRate: 5
+    - duration: 30
+      arrivalRate: 50
+    - duration: 20
+      arrivalRate: 10
+scenarios:
+  - name: Paginated GET
+    flow:
+      - get:
+          url: "/api/quotes?page=1&limit=20"
