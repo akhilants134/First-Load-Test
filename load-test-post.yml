@@ -1,0 +1,16 @@
+config:
+  target: "http://localhost:3001"
+  phases:
+    - duration: 10
+      arrivalRate: 5
+    - duration: 30
+      arrivalRate: 50
+    - duration: 20
+      arrivalRate: 10
+scenarios:
+  - name: POST favorites
+    flow:
+      - post:
+          url: "/api/favorites"
+          json:
+            quoteId: 1
